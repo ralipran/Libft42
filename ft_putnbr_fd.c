@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/12 21:57:35 by ralipran         ###   ########.fr       */
+/*   Created: 2024/10/13 14:30:26 by ralipran          #+#    #+#             */
+/*   Updated: 2024/10/13 15:19:38 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		len;
-	char	*str;
+	long	nb;
+	char	digit;
 
-	i = 0;
-	len = ft_strlen(s);
-	while (s[i])
-		i++;
-	str = (char *)malloc(sizeof(*str) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (i >= 0)
+	nb = n;
+	if (nb < 0)
 	{
-		str[i] = s[i];
-		i--;
+		write (fd, "-", 1);
+		nb = -nb;
 	}
-	return (str);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	digit = (nb % 10) + '0';
+	ft_putchar_fd(digit, fd);
 }

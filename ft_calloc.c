@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/10 19:12:16 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/12 15:51:18 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	taille_totale = count * size;
 	ptr = malloc(taille_totale);
-		if (ptr == NULL)
+	if (ptr == NULL)
 		return (NULL);
 	ft_memset(ptr, 0, taille_totale);
 	return (ptr);

@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/10 19:14:46 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:00:40 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ unsigned int	count_len(int nb)
 		len = len + 1;
 	while (nb)
 	{
-		len = len / 10;
+		nb = nb / 10;
 		len++;
 	}
 	return (len);
@@ -35,12 +35,11 @@ char	*ft_itoa(int n)
 	unsigned int	nb;
 	char			*str;
 
-	nb	= 0;
 	len = count_len(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	if (nb < 0)
+	if (n < 0)
 	{
 		str[0] = '-';
 		nb = -n;

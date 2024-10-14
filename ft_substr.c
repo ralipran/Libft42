@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/10 17:17:09 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:17:42 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,33 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
+	size_t	s_len;
 	char	*str;
 
 	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+	{
+		str = (char *)malloc(sizeof(char));
+		str[i] = 0;
+		return (str);
+	}
+	if (len > s_len - start)
+		len = s_len - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = '\0';
+	while (i < len)
+		str[i++] = s[start++];
+	str[i] = 0;
 	return (str);
 }
 /*#include <stdio.h>
 int	main()
 {
 	char *str1;
-	str1 = substr("Le caca sent très bon", 3, 5);
+	str1 = ft_substr("Le caca sent tres bon", 8, 8);
 	printf("%s\n", str1);
 }*/

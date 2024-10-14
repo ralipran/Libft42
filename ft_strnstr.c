@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/10 19:19:14 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/12 18:25:30 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 
 	i = 0;
 	j = 0;
-	if (s2 == NULL || s2 == (void *)0)
+	if (s2[0] == '\0')
 		return ((char *)s1);
 	while (s1[i] && i < len)
 	{
