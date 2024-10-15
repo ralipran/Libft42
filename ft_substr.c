@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:35 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/14 15:17:42 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:31:40 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 	{
-		str = (char *)malloc(sizeof(char));
+		str = (char *)malloc(sizeof(char) * 1);
+		if (str == NULL)
+			return (NULL);
 		str[i] = 0;
 		return (str);
 	}
@@ -42,6 +44,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int	main()
 {
 	char *str1;
-	str1 = ft_substr("Le caca sent tres bon", 8, 8);
+	str1 = ft_substr("", 0, 0);
 	printf("%s\n", str1);
 }*/
