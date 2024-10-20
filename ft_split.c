@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: ralipran <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 17:08:47 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/15 19:20:31 by ralipran         ###   ########.fr       */
+/*   Created: 2024/10/15 19:36:18 by ralipran          #+#    #+#             */
+/*   Updated: 2024/10/20 23:11:12 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 int	word_count(const char *str, const unsigned char c)
 {
